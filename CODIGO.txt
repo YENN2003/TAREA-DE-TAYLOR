@@ -1,0 +1,14 @@
+import math
+def taylor_series_expansion(x, terms=5):
+    result = 0
+    for n in range(terms):
+        result += (x**n) / math.factorial(n)
+    return result
+
+x_value = 1 
+approximation = taylor_series_expansion(x_value, terms=5)
+exact_value = math.exp(x_value)
+
+print(f"Aproximación de e^{x_value} usando la serie de Taylor: {approximation}")
+print(f"Valor exacto de e^{x_value}: {exact_value}")
+print(f"Error: {abs(exact_value - approximation)}")
